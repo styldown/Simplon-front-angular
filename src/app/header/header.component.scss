@@ -1,0 +1,28 @@
+.conteneur{
+  background-color: #fc9692;
+  width: max;
+  height:120px;
+  display:flex;
+  .element1
+  {
+    width:max-content;
+    height:100%;
+    order: 2;
+    display:flex;
+    .deconnexion{
+      align-self: center;
+      width: 60px;
+      height: 20px;
+      padding: 1em;
+    }
+
+  }
+  .element2
+  {
+    order: 1;
+    flex:1;
+
+  }
+}
+
+

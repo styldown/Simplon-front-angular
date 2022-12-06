@@ -1,0 +1,39 @@
+import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AppService } from 'src/app/app.service';
+
+@Component({
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss']
+})
+export class LoginComponent implements OnInit {
+
+  username: string="";
+  password : string="";
+  errorMessage = 'Invalid Credentials';
+  successMessage!: string;
+  invalidLogin = false;
+  loginSuccess = false;
+
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private authenticationService: AppService) {   }
+
+  ngOnInit() {
+  }
+
+  handleLogin() {
+    this.authenticationService.AppService(this.username, this.password).subscribe((result)=> {
+      this.invalidLogin = false;
+      this.loginSuccess = true;
+      this.successMessage = 'Login Successful.';
+      this.router.navigate(['/hello-world']);
+    }, () => {
+      this.invalidLogin = true;
+      this.loginSuccess = false;
+    });
+  }
+}

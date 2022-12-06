@@ -1,0 +1,41 @@
+.sidebar {
+  width:max-content;
+  height:100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #fc9692;
+  display:flex;
+  flex-direction:column;
+
+
+
+  .logo {
+      width: 205px;
+      height: 80px;
+      padding: 1em;
+
+  }
+
+  .menu {
+      flex:1;
+      display:flex;
+      flex-direction: column;
+      justify-content: center;
+      transform: translateY(-20%);
+
+      ul li {
+          list-style: none;
+          cursor: pointer;
+          margin: 1em auto;
+          color: rgb(5, 5, 34);
+          &:hover{
+            font-size: 23px;
+
+          }
+
+      }
+
+  }
+
+}
