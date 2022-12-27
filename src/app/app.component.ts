@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AppService } from './app.service';
+import Test from './mudule/Test';
 
 @Component({
   selector: 'app-root',
@@ -10,5 +11,5 @@ import { AppService } from './app.service';
 })
 export class AppComponent {
   title = 'simplon-front';
- 
+
 }

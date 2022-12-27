@@ -1,0 +1,21 @@
+
+.container
+{
+  display: flex;
+  height: 100%;
+  width:100%;
+  .sidebar{
+    flex:1.5;
+  }
+  .content {
+    display:flex;
+    flex:8.5;
+    flex-direction: column;
+    .header{
+      flex:2;
+    }
+    .page{
+      flex:8;
+    }
+  }
+}

@@ -1,7 +1,7 @@
 .conteneur{
   background-color: #fc9692;
   width: max;
-  height:120px;
+  height:100%;
   display:flex;
   .element1
   {
@@ -21,6 +21,9 @@
   {
     order: 1;
     flex:1;
+    display:flex;
+    flex-direction: column ;
+    align-items: center;
 
   }
 }

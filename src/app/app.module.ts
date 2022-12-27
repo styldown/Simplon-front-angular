@@ -13,6 +13,11 @@ import { LoginComponent } from './_page/login/login.component';
 import { HttpClientModule, HttpHandler, HttpInterceptor, HttpRequest, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppService } from './app.service';
 import { FormsModule } from '@angular/forms';
+import { PrincipaleComponent } from './principale/principale.component';
+import { AcceuilComponent } from './_page/acceuil/acceuil.component';
+import { HttpInterceptorService } from './http-interceptor.service';
+import { FormationComponent } from './_page/formation/formation.component';
+
 
 
 
@@ -25,7 +30,10 @@ import { FormsModule } from '@angular/forms';
     ListeStagiaireComponent,
     AjoutStagiaireComponent,
     AjoutFormationComponent,
-    LoginComponent
+    LoginComponent,
+    PrincipaleComponent,
+    AcceuilComponent,
+    FormationComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +41,7 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule
   ],
-  providers: [AppService],
+  providers: [AppService, { provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorService, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

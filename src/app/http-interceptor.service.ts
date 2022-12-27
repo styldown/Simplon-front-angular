@@ -9,6 +9,7 @@ export class HttpInterceptorService implements HttpInterceptor {
     constructor(private authenticationService: AppService) { }
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+
         if (this.authenticationService.isUserLoggedIn() && req.url.indexOf('basicauth') === -1) {
             const authReq = req.clone({
                 headers: new HttpHeaders({
@@ -16,9 +17,14 @@ export class HttpInterceptorService implements HttpInterceptor {
                     'Authorization': `Basic ${window.btoa(this.authenticationService.username + ":" + this.authenticationService.password)}`
                 })
             });
+            console.log("interceptor");
             return next.handle(authReq);
         } else {
             return next.handle(req);
+            // const xhr = req.clone({
+            //   headers: req.headers.set('X-Requested-With', 'XMLHttpRequest')
+            // })
+            // return next.handle(xhr);
         }
-    }
+  }
 }

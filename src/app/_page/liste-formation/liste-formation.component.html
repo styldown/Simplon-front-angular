@@ -1,1 +1,5 @@
-<p>liste-formation works!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</p>
+
+  <ul *ngFor="let formation of formations">
+      <li routerLink="/user/formation/{{formation.id}}">{{formation.nom}}</li>
+  </ul>
+
