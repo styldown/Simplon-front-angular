@@ -15,8 +15,9 @@ import { AppService } from './app.service';
 import { FormsModule } from '@angular/forms';
 import { PrincipaleComponent } from './principale/principale.component';
 import { AcceuilComponent } from './_page/acceuil/acceuil.component';
-import { HttpInterceptorService } from './http-interceptor.service';
+import { HttpInterceptorService } from './service/http-interceptor.service';
 import { FormationComponent } from './_page/formation/formation.component';
+import { StagiaireComponent } from './_page/stagiaire/stagiaire.component';
 
 
 
@@ -34,6 +35,7 @@ import { FormationComponent } from './_page/formation/formation.component';
     PrincipaleComponent,
     AcceuilComponent,
     FormationComponent,
+    StagiaireComponent,
   ],
   imports: [
     BrowserModule,

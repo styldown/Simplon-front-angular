@@ -14,9 +14,6 @@ export class AppService {
 
   public username!: string;
   public password!: string;
-  static utilisateur: Utilisateur;
-
-
   constructor(private http: HttpClient) {
 
   }

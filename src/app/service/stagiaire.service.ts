@@ -13,4 +13,7 @@ export class StagiaireService {
   getStagiaireByFormation(idFormation: Number): Observable<Stagiaire[]>{
     return this.http.get<Stagiaire[]>("http://localhost:9090/stagiaires/liststagiaire/"+idFormation);
   }
+  // getStagiaireById(idStagiaire: Number): Observable<Stagiaire>{
+  //   return ;
+  // }
 }

@@ -12,12 +12,13 @@ import Stagiaire from 'src/app/mudule/Stagiaire';
 export class FormationComponent {
   id!: Number;
   listStagiaire!: Stagiaire[];
-  constructor(private http:HttpClient, private route: ActivatedRoute, private service: StagiaireService) {}
+  constructor(private route: ActivatedRoute, private service: StagiaireService) {}
   ngOnInit() {
     this.id =Number(this.route.snapshot.params['id']);
     this.service.getStagiaireByFormation(this.id).subscribe({
       next:(resultat)=>{
         this.listStagiaire=resultat;
+        localStorage.setItem('listStagiaire', JSON.stringify(resultat))
       },
       error:() => {
         console.log("echec requet");

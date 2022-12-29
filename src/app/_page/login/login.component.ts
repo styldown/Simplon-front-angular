@@ -19,7 +19,6 @@ export class LoginComponent implements OnInit {
   retour!:any;
 
   constructor(
-    private route: ActivatedRoute,
     private router: Router,
     private authenticationService: AppService) {   }
 
